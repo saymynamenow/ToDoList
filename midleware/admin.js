@@ -12,7 +12,7 @@ export default function checkAdmin(req, res, next) {
 
   try {
     jwt.verify(token, secretKey, (err, user) => {
-      if (err) return res.status(400).json({ message: "Invalid token" });
+      if (err) return res.status(400).json({ message: "Invalid Token" });
       if (user.data.role !== "admin")
         return res.status(401).json({ message: "You are not authorized" });
 
